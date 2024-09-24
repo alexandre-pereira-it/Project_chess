@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess</title>
+</head>
+<style>
+    .chess-board {
+        border-spacing: 0;
+        border-collapse: collapse;
+        text-align: center;
+    }
+
+    .chess-board th {
+        padding: .5em;
+    }
+
+    .chess-board td {
+        border: 1px solid;
+        width: 75px;
+        height: 5px;
+    }
+
+    .chess-board .light {
+        background: #ffffff;
+        font-size: xxx-large;
+    }
+
+    .chess-board .dark {
+        background: #44444475;
+        font-size: xxx-large;
+    }
+</style>
+
+<body>
+    <header>
+        <h1>Chess</h1>
+    </header>
+    <main>
+        <form action="">
+            <input type="reset" value="New Game">
+            <table class="chess-board">
+                <tr>
+                    <th></th>
+                    <th>
+                        <h3>A</h3>
+                    </th>
+                    <th>
+                        <h3>B</h3>
+                    </th>
+                    <th>
+                        <h3>C</h3>
+                    </th>
+                    <th>
+                        <h3>D</h3>
+                    </th>
+                    <th>
+                        <h3>E</h3>
+                    </th>
+                    <th>
+                        <h3>F</h3>
+                    </th>
+                    <th>
+                        <h3>G</h3>
+                    </th>
+                    <th>
+                        <h3>H</h3>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <h3>8</h3>
+                    </th>
+                    <td class="light">♜</td>
+                    <td class="dark">♞</td>
+                    <td class="light">♝</td>
+                    <td class="dark">♛</td>
+                    <td class="light">♚</td>
+                    <td class="dark">♝</td>
+                    <td class="light">♞</td>
+                    <td class="dark">♜</td>
+                </tr>
+                <tr>
+                    <th>
+                        <h3>7</h3>
+                    </th>
+                    <td class="dark">♟</td>
+                    <td class="light">♟</td>
+                    <td class="dark">♟</td>
+                    <td class="light">♟</td>
+                    <td class="dark">♟</td>
+                    <td class="light">♟</td>
+                    <td class="dark">♟</td>
+                    <td class="light">♟</td>
+                </tr>
+                <tr>
+                    <th>
+                        <h3>6</h3>
+                    </th>
+                    <td class="light"></td>
+                    <td class="dark"></td>
+                    <td class="light"></td>
+                    <td class="dark"></td>
+                    <td class="light"></td>
+                    <td class="dark"></td>
+                    <td class="light"></td>
+                    <td class="dark"></td>
+                </tr>
+                <tr>
+                    <th>
+                        <h3>5</h3>
+                    </th>
+                    <td class="dark"></td>
+                    <td class="light"></td>
+                    <td class="dark"></td>
+                    <td class="light"></td>
+                    <td class="dark"></td>
+                    <td class="light"></td>
+                    <td class="dark"></td>
+                    <td class="light"></td>
+                </tr>
+                <tr>
+                    <th>
+                        <h3>4</h3>
+                    </th>
+                    <td class="light"></td>
+                    <td class="dark"></td>
+                    <td class="light"></td>
+                    <td class="dark"></td>
+                    <td class="light"></td>
+                    <td class="dark"></td>
+                    <td class="light"></td>
+                    <td class="dark"></td>
+                </tr>
+                <tr>
+                    <th>
+                        <h3>3</h3>
+                    </th>
+                    <td class="dark"></td>
+                    <td class="light"></td>
+                    <td class="dark"></td>
+                    <td class="light"></td>
+                    <td class="dark"></td>
+                    <td class="light"></td>
+                    <td class="dark"></td>
+                    <td class="light"></td>
+                </tr>
+                <tr>
+                    <th>
+                        <h3>2</h3>
+                    </th>
+                    <td class="light">♙</td>
+                    <td class="dark">♙</td>
+                    <td class="light">♙</td>
+                    <td class="dark">♙</td>
+                    <td class="light">♙</td>
+                    <td class="dark">♙</td>
+                    <td class="light">♙</td>
+                    <td class="dark">♙</td>
+                </tr>
+                <tr>
+                    <th>
+                        <h3>1</h3>
+                    </th>
+                    <td class="dark">♖</td>
+                    <td class="light">♘</td>
+                    <td class="dark">♗</td>
+                    <td class="light">♕</td>
+                    <td class="dark">♔</td>
+                    <td class="light">♗</td>
+                    <td class="dark">♘</td>
+                    <td class="light">♖</td>
+                </tr>
+            </table><br>
+            <label for="piece">
+                <h2>Selecione a peça a mover:</h2>
+            </label>
+            <select name="piece" id="piece">
+                <option value="A1_rook">Torre A1</option>
+                <option value="B1_knight">Cavalo B1</option>
+                <option value="C1_bishop">Bispo C1</option>
+                <option value="D1_Queen">Rainha D1</option>
+                <option value="E1_King">Rei E1</option>
+                <option value="F1_bishop">Bispo F1</option>
+                <option value="G1_knight">Cavalo G1</option>
+                <option value="H1_rook">Torre H1</option>
+                <option value="A2_pawn">Peão A2</option>
+                <option value="B2_pawn">Peão B2</option>
+                <option value="C2_pawn">Peão C2</option>
+                <option value="D2_pawn">Peão D2</option>
+                <option value="E2_pawn">Peão E2</option>
+                <option value="F2_pawn">Peão F2</option>
+                <option value="G2_pawn">Peão G2</option>
+                <option value="H2_pawn">Peão H2</option>
+                <option value="A8_rook">Torre A8</option>
+                <option value="B8_knight">Cavalo B8</option>
+                <option value="C8_bishop">Bispo C8</option>
+                <option value="D8_Queen">Rainha D8</option>
+                <option value="E8_King">Rei E8</option>
+                <option value="F8_bishop">Bispo F8</option>
+                <option value="G8_knight">Cavalo G8</option>
+                <option value="H8_rook">Torre H8</option>
+                <option value="A7_pawn">Peão A7</option>
+                <option value="B7_pawn">Peão B7</option>
+                <option value="C7_pawn">Peão C7</option>
+                <option value="D7_pawn">Peão D7</option>
+                <option value="E7_pawn">Peão E7</option>
+                <option value="F7_pawn">Peão F7</option>
+                <option value="G7_pawn">Peão G7</option>
+                <option value="H7_pawn">Peão H7</option>
+            </select><br>
+            <label for="move">
+                <h2>Selecione para onde mover:</h2>
+            </label>
+            <select name="move" id="move">
+                <option value="A1_board">A1</option>
+                <option value="A2_board">A2</option>
+                <option value="A3_board">A3</option>
+                <option value="A4_board">A4</option>
+                <option value="A5_board">A5</option>
+                <option value="A6_board">A6</option>
+                <option value="A7_board">A7</option>
+                <option value="A8_board">A8</option>
+                <option value="B1_board">B1</option>
+                <option value="B2_board">B2</option>
+                <option value="B3_board">B3</option>
+                <option value="B4_board">B4</option>
+                <option value="B5_board">B5</option>
+                <option value="B6_board">B6</option>
+                <option value="B7_board">B7</option>
+                <option value="B8_board">B8</option>
+                <option value="C1_board">C1</option>
+                <option value="C2_board">C2</option>
+                <option value="C3_board">C3</option>
+                <option value="C4_board">C4</option>
+                <option value="C5_board">C5</option>
+                <option value="C6_board">C6</option>
+                <option value="C7_board">C7</option>
+                <option value="C8_board">C8</option>
+                <option value="D1_board">D1</option>
+                <option value="D2_board">D2</option>
+                <option value="D3_board">D3</option>
+                <option value="D4_board">D4</option>
+                <option value="D5_board">D5</option>
+                <option value="D6_board">D6</option>
+                <option value="D7_board">D7</option>
+                <option value="D8_board">D8</option>
+                <option value="E1_board">E1</option>
+                <option value="E2_board">E2</option>
+                <option value="E3_board">E3</option>
+                <option value="E4_board">E4</option>
+                <option value="E5_board">E5</option>
+                <option value="E6_board">E6</option>
+                <option value="E7_board">E7</option>
+                <option value="E8_board">E8</option>
+                <option value="F1_board">F1</option>
+                <option value="F2_board">F2</option>
+                <option value="F3_board">F3</option>
+                <option value="F4_board">F4</option>
+                <option value="F5_board">F5</option>
+                <option value="F6_board">F6</option>
+                <option value="F7_board">F7</option>
+                <option value="F8_board">F8</option>
+                <option value="G1_board">G1</option>
+                <option value="G2_board">G2</option>
+                <option value="G3_board">G3</option>
+                <option value="G4_board">G4</option>
+                <option value="G5_board">G5</option>
+                <option value="G6_board">G6</option>
+                <option value="G7_board">G7</option>
+                <option value="G8_board">G8</option>
+                <option value="H1_board">H1</option>
+                <option value="H2_board">H2</option>
+                <option value="H3_board">H3</option>
+                <option value="H4_board">H4</option>
+                <option value="H5_board">H5</option>
+                <option value="H6_board">H6</option>
+                <option value="H7_board">H7</option>
+                <option value="H8_board">H8</option>
+            </select><br>
+            <input type="submit" value="Mover"><br>
+            <output>Jogador Atual: Branco</output>
+        </form>
+    </main>
+</body>
+
+</html>
